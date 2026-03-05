@@ -2,10 +2,11 @@ spring:
   application:
     name: api_repo_commit
   datasource:
-    url: jdbc:mysql://localhost:3306/repo_commit
+    url: jdbc:mysql://localhost:3306/repos_commit
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-  jpa:
-    show-sql: true
-    open-in-view: false
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true

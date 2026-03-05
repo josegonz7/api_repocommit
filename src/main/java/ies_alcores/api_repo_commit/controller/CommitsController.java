@@ -14,10 +14,10 @@ import java.util.List;
 public class CommitsController {
 
     @Autowired
-    private CommitsService commitService;
+    private CommitsService commitsService;
 
     @GetMapping
     public List<Commits> findAll(){
-        return this.commitService.findAll();
+        return this.commitsService.findAll();
     }
 }

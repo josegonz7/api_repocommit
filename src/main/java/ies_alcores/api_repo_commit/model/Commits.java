@@ -1,7 +1,9 @@
 package ies_alcores.api_repo_commit.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
 
@@ -18,6 +20,8 @@ public class Commits {
     private Date fecha;
 
     @ManyToOne
-    private Repositorios Repositorios;
+    @JoinColumn(name = "id_repo")
+    @JsonIgnoreProperties("commits")
+    private Repositorios repositorios;
 
 }
